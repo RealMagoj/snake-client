@@ -3,6 +3,9 @@ let connection;
 const handleUserInput = function (key) {
   if (key === '\u0003') {
     process.exit();
+  };
+  if (key === '\u0020') {
+    connection.write('Say: Move Bitch~!');
   }
   switch (key) {
     case '\u001b[A':
@@ -32,4 +35,4 @@ const setupInput = function (conn) {
 
 module.exports = {
   setupInput
-}
+};
