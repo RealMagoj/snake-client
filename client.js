@@ -10,10 +10,12 @@ const connect = function () {
   // interpret incoming data as text
   conn.setEncoding("utf8");
 
-  conn.on('connect', () => console.log('Successfully connected to game server'));
+  conn.on('connect', () => {
+    console.log('Successfully connected to game server');
+    conn.write('Name: Mod');
+  });
+    
   conn.on('data', data => console.log(data));
-  
-  conn.write('Name: Mod');
 
   return conn;
 };
